@@ -1,13 +1,12 @@
-package com.example.repositories;
+package com.example.mapper;
 
 import com.example.model.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-@Repository
-@Component
-public interface UserRepository {
+@Mapper
+public interface UserMapper {
 
     @Select("SELECT * FROM USERS WHERE username = #{username}")
     User getUser(String username);
