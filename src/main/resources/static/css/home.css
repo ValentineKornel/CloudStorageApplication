@@ -1,0 +1,99 @@
+/* div{
+    border: 1px solid black;
+} */
+body{
+    background-color: bisque
+}
+.container{
+    width: 80%;
+    /* border: 1px solid black; */
+    margin: 0% 10% 0% 10%;
+    font-size: 18px;
+}
+
+#searchDiv{
+    /* border: 1px solid black; */
+    float: left;
+}
+#searchInput{
+    border: 0px;
+    height: 30px;
+    width: 200px;
+}
+
+#logoutButton{
+    width: 70px;
+    height: 35px;
+    margin-left: 70%;
+}
+
+
+.filesContainer{
+/* border: 1px solid black; */
+height: 100%;
+}
+
+#uploadForm{
+    margin-top: 40px;
+    height: 50px;
+    border-top: 2px solid rgb(213, 212, 212);
+    border-bottom: 2px solid rgb(213, 212, 212);
+}
+
+
+#fileUploadButton{
+    margin-top: 6px;
+    margin-left: 10%;
+    width: 70px;
+    height: 35px;
+}
+
+#uploadLabel{
+    margin-left: 10%;
+}
+
+#fileUpload{
+    margin-left: 3%;
+    border: 0px;
+}
+
+.filesDiv{
+    margin-top: 10px;
+}
+
+#fileTable{
+    /* border: 1px solid black; */
+    width: 100%;
+    border-spacing: 0px;
+}
+
+#fileView{
+    display: inline-block;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-left: 15px;
+    height: 25px;
+    width: 65px;
+    background-color: green;
+    color: white;
+}
+#fileDelete{
+    display: inline-block;
+    margin-left: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    height: 25px;
+    width: 75px;
+    background-color: rgb(232, 57, 57);
+    color: white;
+}
+
+tr,td, th{
+    /* border: 3px solid blue; */
+    height: 50px;
+}
+
+/* #fileTr{
+   background-color: gray;
+   height: 50px;
+} */
