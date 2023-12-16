@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -57,8 +58,6 @@ public class FileService {
 
     public void changeVisibility(int fileId){
         File file = fileMapper.getFileById(fileId);
-        System.out.println(file.getFileId());
-        System.out.println(file.getIsPublic());
 
         fileMapper.changeVisibility(fileId, !file.getIsPublic());
     }

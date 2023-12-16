@@ -29,8 +29,7 @@ public interface FileMapper {
             " OR userId = #{userId})")
     List<File> getAllFilesSearched(String searchRequest, int userId);
 
-    @Select("SELECT * FROM FILES WHERE (userId = #{searchId} AND isPublic = 1)" +
-            " OR userId = #{userId}")
+    @Select("SELECT * FROM FILES WHERE (userId = #{searchId} AND isPublic = 1)")
     List<File> getUserFilesSearched(int searchId, int userId);
 
     @Update("UPDATE FILES SET isPublic = #{isPublic} WHERE fileId = #{fileId}")

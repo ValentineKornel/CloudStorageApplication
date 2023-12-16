@@ -1,0 +1,15 @@
+com\example\model\File.class
+com\example\controller\LoginController.class
+com\example\services\FileService.class
+com\example\CloudStorageApplication.class
+com\example\controller\HomeController.class
+com\example\mapper\FileMapper.class
+com\example\mapper\UserMapper.class
+com\example\model\User.class
+com\example\services\UserService.class
+com\example\config\SecurityConfig.class
+com\example\controller\SearchController.class
+com\example\controller\SignupController.class
+com\example\services\AuthenticationService.class
+com\example\services\HashService.class
+com\example\controller\FileController.class

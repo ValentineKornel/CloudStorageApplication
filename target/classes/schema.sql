@@ -10,11 +10,11 @@ CREATE TABLE IF NOT EXISTS USERS (
 CREATE TABLE IF NOT EXISTS FILES (
     fileId INT PRIMARY KEY auto_increment,
     isPublic TINYINT(1),
-    filename VARCHAR(30),
-    contentType VARCHAR(20),
+    filename VARCHAR(100),
+    contentType VARCHAR(80),
     fileSize VARCHAR(20),
     userId INT,
     ownerUsername VARCHAR(20),
-    fileData BLOB,
+    fileData LONGBLOB,
     foreign key (userId) references USERS(userId)
 );

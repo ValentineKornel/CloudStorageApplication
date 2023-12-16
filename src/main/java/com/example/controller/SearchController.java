@@ -1,6 +1,7 @@
 package com.example.controller;
 
 
+import com.example.model.File;
 import com.example.services.FileService;
 import com.example.services.UserService;
 import org.springframework.security.core.Authentication;
@@ -9,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -27,13 +31,17 @@ public class SearchController {
         int userId = userService.getUser(authentication.getName()).getUserId();
 
         if(searchRequest.charAt(0) == '@'){
-            Integer senderId = userService.getUser(searchRequest.substring(1)).getUserId();
-            if(senderId== null){
+            Integer senderId = null;
+            try{
+                senderId = userService.getUser(searchRequest.substring(1)).getUserId();
+            }catch (NullPointerException e){
                 model.addAttribute("message", "Search results with '" + searchRequest + "': ");
+                model.addAttribute("files", new ArrayList<>());
                 return "search";
             }
-            System.out.println(searchRequest.substring(1));
-            System.out.println(senderId);
+            if(senderId.equals(userId)){
+                return "redirect:/home";
+            }
 
             model.addAttribute("message", "Search results with '" + searchRequest + "': ");
             model.addAttribute("files", fileService.getUserFilesSearched(senderId, userId));

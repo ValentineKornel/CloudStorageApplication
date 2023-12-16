@@ -3,6 +3,7 @@ package com.example.controller;
 
 import com.example.model.File;
 import com.example.services.FileService;
+import com.mysql.cj.exceptions.DataTruncationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.DataTruncation;
 import java.util.Objects;
 
 @Controller
@@ -29,6 +31,14 @@ public class FileController {
         ModelAndView result = new ModelAndView();
         String status = null;
         boolean isPublic = false;
+
+        if(file.getSize() > 30000000){
+            result.addObject("errorMsg", true);
+            status = "File is too big. Max file size is 30MB";
+            result.setViewName("result");
+            result.addObject("message", status);
+            return result;
+        }
 
         try{
             if(fileService.addFile(file, isPublic, auth.getName())) {

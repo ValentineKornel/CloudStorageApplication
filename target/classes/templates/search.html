@@ -40,8 +40,6 @@
                 <tr th:each="file : ${files}" th:id="${'file' + file.fileId}">
                     <td>
                         <a id="fileView" th:href="${'/files/download/' + file.fileId}" style="font-size:13px;" download>View</a>
-                        <a id="fileDelete" th:href="${'/files/delete/' + file.fileId}" style="font-size:13px;">Delete</a>
-                        <a id="fileChangeVisibility" th:href="${'/files/changeVisibility/' + file.fileId}" style="font-size:13px;">Change visibility</a>
                     </td>
                     <th th:text="${file.isPublic} ? 'public' : 'private'"></th>
                     <th th:text="${file.filename}" scope="row">ExampleFile.txt</th>
