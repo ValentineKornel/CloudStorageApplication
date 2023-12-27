@@ -1,1 +1,1 @@
-Coud storage using Spring Boot for back-end and Thymeleaf for fron-end
+Coud storage using Spring Boot for back-end and Thymeleaf for fron-end.
